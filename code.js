@@ -248,5 +248,5 @@ function addFlag(containerId, imageId) {
 }
 
 function removeFlag(imageId) {
-  $(`${imageId}i`).remove()
+  $(`#${imageId}i`).remove()
 }
