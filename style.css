@@ -53,6 +53,8 @@ div {
   user-select: none;
 }
 
+
+
 html {
   margin: auto;
   display: table;
@@ -70,25 +72,26 @@ html {
 }
 
 .modes {
-  top: min(calc(50vw + 90px),810px);
+  top: min(calc(50vw + 90px), 810px);
   position: absolute;
 }
 #mode1 {
-  left: calc(50% - 90px);
+  left: calc(50% - 60px);
   transform: translate(-50%);
 }
 #mode2 {
-  left: calc(50% - 30px);
+  left: calc(50%);
   transform: translate(-50%);
 }
 
 #mode3 {
-  left: calc(50% + 30px);
+  left: calc(50% + 60px);
   transform: translate(-50%);
 }
 
 #mode4 {
-  left: calc(50% + 98px);
+  top: min(calc(50vw + 115px), 835px);
+  left: calc(50%);
   transform: translate(-50%);
 }
 
