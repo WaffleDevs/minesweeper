@@ -72,11 +72,13 @@ $(".modes").click(function() {
   placeleboard(sizeArray[this.id]);
 });
 
-$('div').mousedown(function(event) {
-  if (event.which == 3) {
-    if ($("#" + this.id + "i").length == 0 && !board[this.id-1].shown) addFlag(this.id, this.id)
-    else removeFlag(this.id)
-  }
+$('.block').mousedown(function(event) {
+	
+});
+$('body').on("contextmenu", ".block", function(e){
+	if ($("#" + this.id + "i").length == 0 && !board[this.id-1].shown) addFlag(this.id, this.id)
+  else removeFlag(this.id)
+	return false;
 });
 $("body").on("click", ".block", function() {
   click(this.id);
