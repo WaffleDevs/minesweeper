@@ -1,5 +1,4 @@
 body {
-  margin-top: 70px;
   width: calc(100vw/2);
   height: calc(100vw/2);
   border: solid 5px #222;
@@ -8,8 +7,8 @@ body {
   background-color: black;
   text-align: center;
   font-family: 'Readex Pro', sans-serif;
-  max-width: 720px;
-  max-height: 720px;
+  max-width: 540px;
+  max-height: 540px;
 }
 
 .win {
@@ -53,8 +52,6 @@ div {
   user-select: none;
 }
 
-
-
 html {
   margin: auto;
   display: table;
@@ -72,7 +69,7 @@ html {
 }
 
 .modes {
-  top: min(calc(50vw + 90px), 810px);
+  top: min(calc(50vw + 20px), 560px);
   position: absolute;
 }
 #mode1 {
@@ -85,12 +82,12 @@ html {
 }
 
 #mode3 {
-  left: calc(50% + 60px);
+  left: calc(50% + 59px);
   transform: translate(-50%);
 }
 
 #mode4 {
-  top: min(calc(50vw + 115px), 835px);
+  top: min(calc(50vw + 45px), 585px);
   left: calc(50%);
   transform: translate(-50%);
 }
@@ -103,4 +100,10 @@ button {
 
 .block {
   background-color: green;
+}
+
+#flagCount {
+  top: 5px;
+  position: absolute;
+  left: 10px;
 }
