@@ -107,3 +107,15 @@ button {
   position: absolute;
   left: 10px;
 }
+
+#timer {
+  top: 20px;
+  position: absolute;
+  left: 10px;
+}
+
+#highscore {
+  top: 35px;
+  position: absolute;
+  left: 10px;
+}
