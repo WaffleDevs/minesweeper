@@ -1,4 +1,3 @@
-
 let board = [];
 let flags = 0;
 let check;
@@ -7,10 +6,10 @@ let playing = false;
 let clicked = false;
 let timer = 0;
 let highscore = {
-81: 0,
+	81: 0,
   225: 0,
   441: 0,
-  1089: 0
+  1089: 0 
 };
 let timerval = null;
 let sizeArray = {
@@ -31,13 +30,13 @@ placeleboard(81)
 let pressedKeys = []
 
 //keys
-window.onkeydown = function(e) {
-const index = pressedKeys.indexOf(e.keyCode);
+window.onkeydown = function(e) { 
+	const index = pressedKeys.indexOf(e.keyCode);
   if (index == -1) { // only splice array when item is found
-    pressedKeys.push(e.keyCode);
+    pressedKeys.push(e.keyCode); 
   }
 }
-window.onkeyup = function(e) {
+window.onkeyup = function(e) { 
   const index = pressedKeys.indexOf(e.keyCode);
   if (index > -1) { // only splice array when item is found
     pressedKeys.splice(index, 1); // 2nd parameter means remove one item only
@@ -98,8 +97,8 @@ $(".modes").click(function() {
 
 $("body").on("mousedown", ".block", function(e) {
   if (e.button == 2) {
-  switch (pressedKeys[0]){
-      case 65:
+  	switch (pressedKeys[0]){
+      case 65: 
         $('#' + this.id).css('background-color', "#f44");
         return;
       case 83:
@@ -163,7 +162,7 @@ function recurse(id) {
         ((a == -1 || a == 1) && row1 == row2) ||
         (a > 1 && row1 + 1 == row2))
     ) {
-    if($(`#${a+id}i`).length != 0&& !board[id - 1 + a].show) removeFlag(`${id+a}i`)
+    	if($(`#${a+id}i`).length != 0&& !board[id - 1 + a].show) removeFlag(`${id+a}i`)
       board[id - 1 + a].shown = true
       board[id - 1].exposed = true
       if (board[id + a - 1].amntOfBombs == 0 && board[id + a - 1].exposed != true) recurse(id + a)
@@ -172,7 +171,7 @@ function recurse(id) {
 }
 
 function placeleboard(mode, redo, id) {
-$('#highscore').text(`Highscore: ${highscore[mode]}s`);
+	$('#highscore').text(`Highscore: ${highscore[mode]}s`);
   clearInterval(timerval);
   timer = 0;
   $('#timer').text(`Time: ${timer}s`);
