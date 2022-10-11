@@ -26,9 +26,10 @@ let bombArray = {
 };
 
 let maxBlocks = 1089
-placeleboard(81)
 let pressedKeys = []
+let colors = [];
 
+placeleboard(81)
 //keys
 window.onkeydown = function(e) { 
 	const index = pressedKeys.indexOf(e.keyCode);
@@ -84,6 +85,7 @@ function drawBoard() {
       }
       if (board[i - 1].shown == true && board[i - 1].bomb == true) $("#" + i).css("background", "red");
     } catch (e) {}
+    if(colors[i] != "") $("#" + i).css("background", colors[i]);
   }
 }
 
@@ -96,24 +98,34 @@ $(".modes").click(function() {
 
 
 $("body").on("mousedown", ".block", function(e) {
+  switch (pressedKeys[0]){
+    case 65:
+			if(colors[this.id] == "#f44") colors[this.id] = "";
+      else colors[this.id] = "#f44"
+      drawBoard()
+      return;
+    case 83:
+			if(colors[this.id] == "#ff4") colors[this.id] = "";
+      else colors[this.id] = "#ff4"
+      drawBoard()
+      return;
+    case 68:
+			if(colors[this.id] == "#4f4") colors[this.id] = "";
+      else colors[this.id] = "#4f4"
+      drawBoard()
+      return;
+    case 70:
+			if(colors[this.id] == "#4ff") colors[this.id] = "";
+      else colors[this.id] = "#4ff"
+      drawBoard()
+      return;
+    case 71:
+			if(colors[this.id] == "#44f") colors[this.id] = "";
+      else colors[this.id] = "#44f"
+      drawBoard()
+      return;
+  }
   if (e.button == 2) {
-  	switch (pressedKeys[0]){
-      case 65: 
-        $('#' + this.id).css('background-color', "#f44");
-        return;
-      case 83:
-        $('#' + this.id).css('background-color', "#ff4");
-        return;
-      case 68:
-        $('#' + this.id).css('background-color', "#4f4");
-        return;
-      case 70:
-        $('#' + this.id).css('background-color', "#4ff");
-        return;
-      case 71:
-        $('#' + this.id).css('background-color', "#44f");
-        return;
-    }
     if ($("#" + this.id + "i").length == 0 && !board[this.id-1].shown && flags < bombArray[blocks]) addFlag(this.id, this.id + "i")
     else if($("#" + this.id + "i").length != 0 ) removeFlag(this.id + "i")
   }
@@ -171,6 +183,7 @@ function recurse(id) {
 }
 
 function placeleboard(mode, redo, id) {
+	colors = []
 	$('#highscore').text(`Highscore: ${highscore[mode]}s`);
   clearInterval(timerval);
   timer = 0;
@@ -251,7 +264,6 @@ function redoBoard(mode, id) {
   }
   if (board[id - 1].amntOfBombs != 0 || board[id - 1].bomb == true) redoBoard(mode, id)
 }
-
 
 function win() {
   clearInterval(timerval);
