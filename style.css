@@ -24,14 +24,25 @@ body {
 }
 
 @keyframes win {
-  from { background-color: black; }
-  to { background-color: #0c0; }
+  from {
+    background-color: black;
+  }
+
+  to {
+    background-color: #0c0;
+  }
 }
 
 @keyframes lost {
-  from { background-color: black; }
-  to { background-color: #c00; }
+  from {
+    background-color: black;
+  }
+
+  to {
+    background-color: #c00;
+  }
 }
+
 div {
   font-weight: bolder;
   display: flex;
@@ -68,26 +79,14 @@ html {
   transform: translate(-50%);
 }
 
-.modes {
+.moddedmodes {
+  margin-top: 2px;
+  width: 60px;
+}
+
+#reset {
   top: min(calc(50vw + 20px), 560px);
   position: absolute;
-}
-#mode1 {
-  left: calc(50% - 60px);
-  transform: translate(-50%);
-}
-#mode2 {
-  left: calc(50%);
-  transform: translate(-50%);
-}
-
-#mode3 {
-  left: calc(50% + 59px);
-  transform: translate(-50%);
-}
-
-#mode4 {
-  top: min(calc(50vw + 45px), 585px);
   left: calc(50%);
   transform: translate(-50%);
 }
