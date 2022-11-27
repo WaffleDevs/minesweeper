@@ -359,7 +359,7 @@ function debug(string){
 }
 
 $("#reset").onclick(() => {
-	placeleboard(sizeArray[board.length()]
+	placeleboard(sizeArray[board.length()])
 })
 
 init()
