@@ -358,4 +358,8 @@ function debug(string){
 	if(true) console.log(string)
 }
 
+$("#reset").onclick(() => {
+	placeleboard(sizeArray[board.length()]
+})
+
 init()
